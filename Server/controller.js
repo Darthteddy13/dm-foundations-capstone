@@ -18,6 +18,9 @@ module.exports =
     {
         sequelize.query
         (`
+            DROP TABLE if exists keys;
+
+            
              CREATE TABLE keys (
                    key_id SERIAL PRIMARY KEY,
                    key_name varchar(255) NOT NULL,
@@ -33,7 +36,7 @@ module.exports =
             `)
     },
 
-    getkeys: (req, res) =>
+    getKeys: (req, res) =>
     {
         sequelize.query
         (
@@ -57,7 +60,9 @@ module.exports =
     
     updateKey: (req, res) =>
     {
-        const { id, name, useDescr, useLocation} = req.params;
+        const { id } = req.params;
+        const { name, useDescr, useLocation } = req.body;
+
 
         sequelize.query
         (`
@@ -66,5 +71,16 @@ module.exports =
             WHERE key_id = ${id};
         `)
     },
+
+    deleteKey: (req, res) =>
+    {
+        const { id } = req.params;
+
+        sequelize.query
+        (`
+            DELETE FROM keys
+            WHERE ${id} = key_id;
+        `)
+    }
 
 }
