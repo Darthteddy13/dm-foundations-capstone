@@ -4,20 +4,18 @@ const cors = require('cors')
 
 const port = process.env.PORT || 5050;
 
-const { getKeys, createKey, updateKey, deleteKey } = require('./controller.js')
+const { seed, getKeys, createKey, updateKey, deleteKey } = require('./controller.js');
 
 
-app.get(`/`, (req, res) =>
-{
-    res.sendFile(path.join(__dirname, `../index.html`))
-})
+app.get(`/`, (req, res) => res.sendFile(path.join(__dirname, `../index.html`)));
 
-app.get(`/css`, (req, res) => res.sendFile(path.join(__dirname, `../style.css`)))
+app.get(`/css`, (req, res) => res.sendFile(path.join(__dirname, `../style.css`)));
 
-app.get(`/js`, (req, res) => res.sendFile(path.join(__dirname, `../index.js`)))
+app.get(`/js`, (req, res) => res.sendFile(path.join(__dirname, `../index.js`)));
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
+
 //call seed function
 app.post('/seed', seed);
 
