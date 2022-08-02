@@ -9,6 +9,12 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
 }
 form{
     background-color: #eae9c6;
@@ -16,6 +22,8 @@ form{
     width: fit-content;
     font-size: x-large;
     margin:30px auto;
+    border: solid black 5px;
+    padding: 10px
     
 }
 h1 {
@@ -25,7 +33,7 @@ h1 {
     margin-top: 0px;
 }
 
-#pos {
+#input-desc {
     background-color: grey;
     text-align: center;
     width: fit-content;
@@ -33,9 +41,12 @@ h1 {
 }
 
 #keys-list{
-    display: flexbox;
+    display: flex;
     background-color: white;
     border-radius: 50px;
+    width: 80%;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .key-card {
@@ -46,6 +57,7 @@ h1 {
     margin:15px auto;
     width:fit-content;
     border-radius: 10px;
-    border-color:#c8a167;
+    border: 5px solid black;
+    padding:10px
 }
 
