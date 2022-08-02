@@ -26,6 +26,12 @@ form{
     padding: 10px
     
 }
+input{
+    font-size:large
+}
+#submit{
+    font-size: large;
+}
 h1 {
     background-color: darkolivegreen;
     text-align: center;
@@ -47,6 +53,7 @@ h1 {
     width: 80%;
     justify-content: space-evenly;
     flex-direction: column;
+    border: 5px groove black 
 }
 
 .key-card {
