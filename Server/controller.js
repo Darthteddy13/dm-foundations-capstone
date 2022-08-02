@@ -29,10 +29,11 @@ module.exports =
                    );
                 
                  INSERT INTO keys(key_name, use_descr, use_location)
-                 VALUES ('factory exit', 'Med tent and underground exits in factory. ZB-013 and checkpoint doors between new gas and boilers on customs', 'Customs and Factory'),
+                 VALUES ('Factory Exit', 'Med tent and underground exits in factory. ZB-013 and checkpoint doors between new gas and boilers on customs', 'Customs and Factory'),
                  ('Emercom Medical Unit key', 'Opens medical area in front of Kostin', 'Interchange'),
                  ('RB-ORB1', 'Opens armory door east end 4th floor white pawn building. Needed for Inventory Check quest', 'Reserve'),
-                 ('ZB-014', 'Opens door in bunker near scav house. Can have 5.45 60 round mags', 'Woods');
+                 ('ZB-014', 'Opens door in bunker near scav house. Can have 5.45 60 round mags', 'Woods'),
+                 ('Marked Key', 'Opens marked room in three-story dorms', 'Customs');
             `)
     },
 

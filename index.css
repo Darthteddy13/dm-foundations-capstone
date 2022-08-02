@@ -68,3 +68,6 @@ h1 {
     padding:10px
 }
 
+.key-card > button {
+    font-size: large;
+}
