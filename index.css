@@ -1,0 +1,51 @@
+html {
+    margin: 0;
+}
+
+body{
+    background-image: url('/images/2121153.jpg');
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+form{
+    background-color: #eae9c6;
+    text-align: center;
+    width: fit-content;
+    font-size: x-large;
+    margin:30px auto;
+    
+}
+h1 {
+    background-color: darkolivegreen;
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 0px;
+}
+
+#pos {
+    background-color: grey;
+    text-align: center;
+    width: fit-content;
+    margin:30px auto;
+}
+
+#keys-list{
+    display: flexbox;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.key-card {
+    background-color: #eae9c6;
+    text-align: center;
+    font-size: large;
+    margin-top: 0px;
+    margin:15px auto;
+    width:fit-content;
+    border-radius: 10px;
+    border-color:#c8a167;
+}
+

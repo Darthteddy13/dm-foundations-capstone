@@ -41,7 +41,8 @@ module.exports =
         sequelize.query
         (
             `
-            SELECT * FROM keys;
+            SELECT * FROM keys
+            ORDER BY use_location;
             `
         )
         .then(dbRes => res.status(200).send(dbRes[0]))
@@ -49,13 +50,15 @@ module.exports =
 
     createKey: (req, res) =>
     {
-        const { name, useDescr, useLocation } = req.body;
+        console.table(req.body)
+        const { name, description, location } = req.body;
 
         sequelize.query
         (`
-            INSERT INTO keys (name, use_descr, use_location)
-            VALUES ('${name}', '${useDescr}', '${useLocation}')
+            INSERT INTO keys (key_name, use_descr, use_location)
+            VALUES ('${name}', '${description}', '${location}')
         `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
     },
     
     updateKey: (req, res) =>
@@ -70,6 +73,7 @@ module.exports =
             SET name = '${name}', use_descr = '${useDescr}', use_location = '${useLocation}'
             WHERE key_id = ${id};
         `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
     },
 
     deleteKey: (req, res) =>
@@ -79,7 +83,20 @@ module.exports =
         sequelize.query
         (`
             DELETE FROM keys
-            WHERE ${id} = key_id;
+            WHERE '${id}' = key_id;
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+    },
+
+    getSorted: (req, res) =>
+    {
+        const { location } = req.body;
+
+        sequelize.query
+        (`
+            SELECT *
+            FROM keys
+            WHERE use_location = '${location}'
         `)
     }
 
